@@ -288,29 +288,6 @@ aws iam get-role-policy --role-name synthetic-data-role --policy-name storage-ac
 python scripts/validate_privacy.py --debug
 ```
 
-## Contributing
-
-See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
-
-## License
-
-Apache 2.0 - See [LICENSE](LICENSE) file.
-
-## Support
-
-- Documentation: [docs/](docs/)
-- Issues: GitHub Issues
-- Security: security@yourcompany.com
-
-## Roadmap
-
-- [ ] Multi-cloud support (AWS, Azure, GCP)
-- [ ] Federated learning integration
-- [ ] Real-time synthetic data streaming
-- [ ] Advanced privacy-preserving ML
-- [ ] Automated compliance certification
-
----
 
 **Version**: 1.0.0  
 **Last Updated**: November 2025
