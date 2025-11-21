@@ -157,7 +157,7 @@ IaaS-Scripts/
 <li><a href="https://github.com/spusgh/IaaS-Scripts/blob/main/LangChainAgentDeployment.md">LangChain Agent Deployment on Azure Container Apps</a>
 <li><a href="https://github.com/spusgh/IaaS-Scripts/tree/main/ML-DrivenAuto-ProvisioningEngine">ML- Driven Auto- Provisioning Engine</a>
 <li><a href="https://github.com/spusgh/IaaS-Scripts/tree/main/IaCforMOpsPipelines">IaC for ML Ops Pipelines</a>
-
+<li><a href="https://github.com/spusgh/IaaS-Scripts/tree/main/IaCforSyntheticDataEnvironments">IaC for Synthetic Data Environments</a>
 
 ## ⚠️ Disclaimer
 
