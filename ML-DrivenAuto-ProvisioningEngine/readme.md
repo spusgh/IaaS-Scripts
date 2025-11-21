@@ -39,7 +39,29 @@ An intelligent auto‑provisioning system that predicts infrastructure needs usi
 ---
 
 ## 🏗️ Architecture
+```text
 
+┌──────────────────────────────────────────────────────────┐ 
+│ Data Collection & Ingestion				   │ 
+│ Prometheus / CloudWatch → Time-series Database	   │ 
+└──────────────────────────────────────────────────────────┘ 
+			▼ 
+┌──────────────────────────────────────────────────────────┐ 
+│ ML Prediction Engine					   │ 
+│ Feature Engineering → Training → Ensemble Forecasting	   │ 
+└──────────────────────────────────────────────────────────┘ 
+ 			  ▼ 
+┌──────────────────────────────────────────────────────────┐ 
+│ Provisioning & Decision Engine			   │ 
+│ Threshold Analysis → IaC Generation → Deployment	   │ 
+└──────────────────────────────────────────────────────────┘ 
+			▼ 
+┌──────────────────────────────────────────────────────────┐ 
+│ CICTCD Pipeline Integration				   │ 
+│ CI (Build) → CT (Test) → CD (Deploy) → Monitor	   │ 
+└──────────────────────────────────────────────────────────┘
+
+```
 
 
 ---
