@@ -155,6 +155,7 @@ IaaS-Scripts/
 
 <li><a href="https://github.com/spusgh/IaaS-Scripts/blob/main/AIRiskPlatform.md">AI Risk Platform</a>
 <li><a href="https://github.com/spusgh/IaaS-Scripts/blob/main/LangChainAgentDeployment.md">LangChain Agent Deployment on Azure Container Apps</a>
+<li><a href="https://github.com/spusgh/IaaS-Scripts/tree/main/ML-DrivenAuto-ProvisioningEngine">ML- Driven Auto- Provisioning Engine</a>
 
 
 ## ⚠️ Disclaimer
