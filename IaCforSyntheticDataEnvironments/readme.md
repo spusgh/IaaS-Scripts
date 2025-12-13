@@ -19,65 +19,6 @@ Infrastructure as Code solution for provisioning isolated, secure environments f
 - Network segmentation and private endpoints
 - Secrets management with HashiCorp Vault
 
-## Repository Structure
-
-```
-synthetic-data-iaac/
-├── README.md
-├── terraform/
-│   ├── main.tf
-│   ├── variables.tf
-│   ├── outputs.tf
-│   ├── modules/
-│   │   ├── networking/
-│   │   │   ├── main.tf
-│   │   │   ├── variables.tf
-│   │   │   └── outputs.tf
-│   │   ├── compute/
-│   │   │   ├── main.tf
-│   │   │   ├── variables.tf
-│   │   │   └── outputs.tf
-│   │   ├── storage/
-│   │   │   ├── main.tf
-│   │   │   ├── variables.tf
-│   │   │   └── outputs.tf
-│   │   └── security/
-│   │       ├── main.tf
-│   │       ├── variables.tf
-│   │       └── outputs.tf
-├── kubernetes/
-│   ├── namespace.yaml
-│   ├── gpu-workload.yaml
-│   ├── storage-claim.yaml
-│   ├── secrets.yaml
-│   └── rbac.yaml
-├── docker/
-│   ├── Dockerfile.generator
-│   ├── Dockerfile.validator
-│   └── requirements.txt
-├── scripts/
-│   ├── generate_synthetic_data.py
-│   ├── validate_privacy.py
-│   ├── compliance_report.py
-│   └── setup_environment.sh
-├── config/
-│   ├── data_schemas/
-│   │   ├── healthcare_schema.json
-│   │   ├── financial_schema.json
-│   │   └── pii_schema.json
-│   ├── privacy_config.yaml
-│   └── compliance_rules.yaml
-├── tests/
-│   ├── test_infrastructure.py
-│   ├── test_data_generation.py
-│   └── test_privacy_compliance.py
-└── docs/
-    ├── ARCHITECTURE.md
-    ├── SECURITY.md
-    ├── DEPLOYMENT.md
-    └── API.md
-```
-
 ## Quick Start
 
 ### Prerequisites
@@ -90,86 +31,19 @@ synthetic-data-iaac/
 ### Installation
 
 1. **Clone the repository**
-```bash
-git clone https://github.com/your-org/synthetic-data-iaac.git
-cd synthetic-data-iaac
-```
-
 2. **Configure cloud credentials**
-```bash
-# AWS
-export AWS_PROFILE=your-profile
-
-# Azure
-az login
-
-# GCP
-gcloud auth application-default login
-```
-
 3. **Initialize Terraform**
-```bash
-cd terraform
-terraform init
-```
-
 4. **Configure variables**
-```bash
-cp terraform.tfvars.example terraform.tfvars
-# Edit terraform.tfvars with your configuration
-```
-
 5. **Deploy infrastructure**
-```bash
-terraform plan
-terraform apply
-```
-
 6. **Configure kubectl**
-```bash
-# AWS EKS
-aws eks update-kubeconfig --name synthetic-data-cluster --region us-east-1
-
-# Azure AKS
-az aks get-credentials --resource-group synthetic-data-rg --name synthetic-data-cluster
-```
-
 7. **Deploy Kubernetes resources**
-```bash
-kubectl apply -f kubernetes/
-```
 
 ## Usage
-
 ### Generate Synthetic Data
-
-```bash
-# Build Docker image
-docker build -t synthetic-generator:latest -f docker/Dockerfile.generator .
-
-# Run data generation job
-kubectl apply -f kubernetes/gpu-workload.yaml
-
-# Monitor job
-kubectl logs -f job/synthetic-data-generation
-```
 
 ### Validate Privacy Compliance
 
-```bash
-python scripts/validate_privacy.py \
-  --input-data s3://synthetic-data-bucket/output/ \
-  --schema config/data_schemas/healthcare_schema.json \
-  --report-output ./compliance_report.json
-```
-
 ### Generate Compliance Report
-
-```bash
-python scripts/compliance_report.py \
-  --environment production \
-  --output ./reports/compliance_$(date +%Y%m%d).pdf
-```
 
 ## Configuration
 
@@ -192,17 +66,6 @@ Define your synthetic data schemas in `config/data_schemas/`:
 ### Privacy Configuration
 
 Configure privacy-preserving mechanisms in `config/privacy_config.yaml`:
-
-```yaml
-privacy_mechanisms:
-  - type: differential_privacy
-    epsilon: 1.0
-    delta: 1e-5
-  - type: k_anonymity
-    k_value: 5
-  - type: data_masking
-    fields: [ssn, email, phone]
-```
 
 ## Data Generation Tools
 
@@ -266,28 +129,9 @@ privacy_mechanisms:
 - Lifecycle policies for storage
 - Resource tagging for cost allocation
 
-## Troubleshooting
 
-### Common Issues
+---
 
-**GPU not available in pod**
-```bash
-kubectl describe node <node-name>
-# Check for nvidia.com/gpu resource
-```
+**Coded with Claude**
 
-**Storage access denied**
-```bash
-# Verify IAM role permissions
-aws iam get-role-policy --role-name synthetic-data-role --policy-name storage-access
-```
-
-**Privacy validation fails**
-```bash
-# Check privacy configuration
-python scripts/validate_privacy.py --debug
-```
-
-
-**Version**: 1.0.0  
-**Last Updated**: November 2025
+---
